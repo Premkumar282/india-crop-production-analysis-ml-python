@@ -1,98 +1,124 @@
-# AQI Pollution Recovery Analysis using Machine Learning
+# 🌾 Crop Production Analysis using Machine Learning
 
-## 📌 Overview
-This project analyzes Air Quality Index (AQI) trends across Indian states and cities using real-world government data. The goal is to understand pollution patterns and evaluate how effectively regions recover after pollution spikes.
+This project focuses on analyzing agricultural crop production across India using data science and machine learning techniques. The goal is to understand key factors influencing production and build predictive models for better insights.
 
-The project combines Exploratory Data Analysis (EDA), visualization, and machine learning models to generate insights into air quality behavior.
+---
+
+## 📌 Project Overview
+
+Agriculture plays a vital role in the economy, but production patterns vary due to multiple factors such as area, crop type, season, and region.
+
+This project explores:
+- What drives crop production?
+- Can machine learning accurately predict production?
+- How do different factors influence agricultural output?
 
 ---
 
 ## 📊 Dataset
+
 - Source: Government of India Open Data Portal (data.gov.in)
-- Organization: CPCB (Central Pollution Control Board)
-- Time Period: 2022–2025
-- Records: 2,35,785+
-- Coverage: 32 States, 291 Cities
+- Contains data on:
+  - States
+  - Crops
+  - Seasons
+  - Area under cultivation
+  - Production
 
 ---
 
-## 🔍 Objectives
-- Analyze AQI trends across time and regions  
-- Identify high pollution areas  
-- Understand seasonal variation in AQI  
-- Build models to predict AQI and classify pollution levels  
+## 🛠️ Workflow
+
+### 🔹 Data Preprocessing
+- Removed missing values
+- Filtered invalid entries (zero/negative values)
+- Cleaned dataset for analysis
+
+### 🔹 Feature Engineering
+- Created new feature: **Yield (Production / Area)**
+- Applied **log transformation** to handle skewed data
+
+### 🔹 Exploratory Data Analysis (EDA)
+- Distribution analysis of production
+- Area vs production relationship
+- Top crops analysis
+- Seasonal variation analysis
+- Correlation heatmap
 
 ---
 
-## 🛠️ Project Workflow
+## 🤖 Machine Learning Models
 
-### 1. Data Cleaning
-- Converted date column to datetime  
-- Removed duplicates  
-- Dropped unnecessary columns (unit, note)  
+### 📈 Regression Models
+- **Linear Regression**
+  - Captures general trend
+  - Moderate performance
 
-### 2. Exploratory Data Analysis (EDA)
-- Analyzed dataset structure and statistics  
-- Identified missing values and patterns  
+- **Random Forest Regressor (Main Model)**
+  - Captures complex patterns
+  - Best performing model
 
-### 3. Data Visualization
-- AQI distribution analysis  
-- City-wise pollution comparison  
-- Seasonal and time-based trends  
-- Correlation analysis  
-
-### 4. Feature Engineering
-- Extracted month and year from date  
-- Created pollution category and binary flag  
-
-### 5. Machine Learning Models
-
-#### 🔹 Linear Regression
-- Purpose: Predict AQI values  
-- Evaluation:
-  - MAE (Mean Absolute Error)
-  - MSE (Mean Squared Error)
-  - R² Score  
-- Result: Moderate performance (R² ≈ 0.21)
-
-#### 🔹 Logistic Regression
-- Purpose: Classify AQI as polluted or not  
-- Evaluation:
-  - Accuracy
-  - Precision
-  - Recall
-  - F1 Score  
-- Result: Moderate classification performance (~68% accuracy)
+### 📊 Classification Model
+- **Logistic Regression**
+  - Categorizes production into:
+    - Low
+    - Medium
+    - High
 
 ---
 
-## 📊 Key Insights
-- AQI values are right-skewed, indicating frequent high pollution events  
-- Winter months show higher pollution levels  
-- Certain cities consistently experience higher AQI  
-- Models capture general trends but not full variability  
-- External factors like weather significantly influence AQI  
+## 📊 Model Performance
+
+| Model | Metric |
+|------|--------|
+| Linear Regression | Moderate R² |
+| Random Forest | High R² (Strong Performance) |
+| Logistic Regression | ~78% Accuracy |
 
 ---
 
-## 🧠 Conclusion
-AQI prediction is a complex problem influenced by multiple environmental factors. While machine learning models provide useful insights, accurate prediction requires additional data such as weather and emission sources.
+## 📈 Key Insights
+
+- Crop production is **strongly influenced by cultivated area**
+- A few crops dominate total agricultural output
+- Production varies significantly across seasons
+- Agricultural data is highly skewed → transformation improves analysis
+- Machine learning effectively captures production patterns
 
 ---
 
-## 🧾 Technologies Used
-- Python  
-- Pandas  
-- Matplotlib  
-- Seaborn  
-- Scikit-learn  
+## 📊 Visualizations
+
+The project includes:
+- Production distribution (log scale)
+- Area vs Production scatter plot
+- Top crops bar chart
+- Season-wise boxplot
+- Correlation heatmap
+- Confusion matrix
 
 ---
 
-## 🔗 Project Link
-GitHub Repository: [Paste your repo link here]
+## 🧰 Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
 
 ---
 
-## 📌 Author
-Prem Kumar
+
+---
+
+## 🎯 Conclusion
+
+This project demonstrates how data science and machine learning can be applied to agricultural data to uncover meaningful insights and build predictive models. Random Forest proved to be the most effective model for this dataset.
+
+---
+
+## 🔗 Connect
+
+If you found this project interesting or have suggestions, feel free to connect or share your feedback!
